@@ -143,8 +143,15 @@ border-radius:4px;
 }
 
 /* MOBILE MENU */
-
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
 }
+
 
 /* Responsive Styles */
 @media (max-width: 768px) {
@@ -166,4 +173,5 @@ border-radius:4px;
     max-height: 500px; /* expands when menu-toggle is clicked */
   }
 }
+
 
