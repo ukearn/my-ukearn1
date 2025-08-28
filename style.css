@@ -137,8 +137,8 @@ border-radius:4px;
 .second-div-div-more:hover {
   background: #8d8c8c;
 }
-.not-found {background-color:darkkhaki;}
-.write-up {background-color: aqua;}
+.not-found {background:darkkhaki;}
+.write-up {background: aqua;}
 
 .highlight {
   color: blueviolet;
@@ -175,6 +175,7 @@ border-radius:4px;
     max-height: 500px; /* expands when menu-toggle is clicked */
   }
 }
+
 
 
 
