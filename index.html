@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UK Earn</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ukearn.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
     <link rel="icon" href="images/favicon.jpg" type="image/x-icon">
   </head>
@@ -24,10 +24,6 @@
       <div class="icons-div">
         <i class="fa-solid fa-qrcode"></i>
         <i class="fa-solid fa-user"></i>
-        <div class="cart-shopping">
-          <i class="fa-solid fa-cart-shopping"></i>
-          <div class="cart-shopping-button"><button>0</button></div>
-        </div>
       </div>
 
       <!-- Hamburger icon (only shows on small screens) -->
@@ -49,13 +45,12 @@
       <div class="second-div-div-more">MORE <i class="fa-solid fa-angle-down"></i></div>
     </nav>
 
-    <div class="not-found">
-      Content Not Found
-      <p>Page won't be interactive</p>
+    <div class="description">
+     <p>Turn your knowledge into cash with UKearn! Answer fun trivia, earn real rewards, and get paid for what you know. Fast, simple, and rewarding Join today and start earning instantly!</p> 
     </div>
 
     <div class="write-up">
-      <p>UK Earn is exclusively for <span class="highlight">For those who have purchased acivation code</span></p>
+      <p>UK Earn is exclusively for <span class="highlight">For those who have purchased activation code</span></p>
       <p class="second-p">To purchase activation code? Ask your referrer.</p>
       <p class="last-p">Enter activation code below</p>
       <label for="activation">Activation Code:</label>
@@ -72,7 +67,74 @@
         navMenu.classList.toggle("show");
       });
     </script>
+     
+     <!-- Sample Questions Intro Section -->
+<div style="max-width: 700px; margin: 40px auto; padding: 30px; background: linear-gradient(135deg, #0d1b2a, #1b263b); color: #fff; text-align: center; border-radius: 16px; box-shadow: 0 6px 18px rgba(0,0,0,0.3); font-family: Arial, sans-serif;">
+  <h2 style="font-size: 1.8rem; margin-bottom: 15px; color: #00bfff;">
+    Below is a sample of the fun and rewarding questions
+  </h2>
+  <p style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 0;">
+    you’ll get once you unlock <span style="font-weight: bold; color: #ffd700;">full access</span>.
+  </p>
+</div>
+
+
+<!-- QUIZ SECTION START -->
+<div class="quiz-container">
+  <h2>Trivia Quiz</h2>
+
+  <!-- Question 1 -->
+  <div class="quiz-question">
+    <p>1. What is the capital of France?</p>
+    <button class="option" data-correct="false">Berlin</button>
+    <button class="option" data-correct="false">Madrid</button>
+    <button class="option" data-correct="true">Paris</button>
+    <button class="option" data-correct="false">Rome</button>
+    <div class="result"></div>
+  </div>
+
+  <!-- Question 2 -->
+  <div class="quiz-question">
+    <p>2. Which planet is known as the Red Planet?</p>
+    <button class="option" data-correct="false">Earth</button>
+    <button class="option" data-correct="true">Mars</button>
+    <button class="option" data-correct="false">Jupiter</button>
+    <button class="option" data-correct="false">Venus</button>
+    <div class="result"></div>
+  </div>
+</div>
+<!-- QUIZ SECTION END -->
+
+
+<!-- QUIZ SCRIPT (Safe: doesn’t touch other code) -->
+<script>
+  document.querySelectorAll(".quiz-question").forEach(questionBlock => {
+    const buttons = questionBlock.querySelectorAll(".option");
+    const resultEl = questionBlock.querySelector(".result");
+
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const isCorrect = btn.getAttribute("data-correct") === "true";
+        if (isCorrect) {
+          resultEl.textContent = "✅ Correct! You earned $5";
+          resultEl.className = "result correct";
+        } else {
+          resultEl.textContent = "❌ Sorry, you lost";
+          resultEl.className = "result wrong";
+        }
+        // disable all buttons for this question after answer
+        buttons.forEach(b => b.disabled = true);
+      });
+    });
+  });
+</script>
+
+<!-- Footer Section -->
+<footer style="background: #111; color: #fff; text-align: center; padding: 20px; margin-top: 40px;">
+  <p>&copy; 2025 UK Earn. All rights reserved.</p>
+  <p>Contact us: <a href="mailto:ukearn@gmail.com" style="color: #00bfff; text-decoration: none;">ukearn@gmail.com</a></p>
+</footer>
+
 
   </body>
 </html>
-
